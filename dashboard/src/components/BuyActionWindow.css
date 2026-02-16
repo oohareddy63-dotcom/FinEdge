@@ -1,0 +1,281 @@
+.container {
+  --radius: 16px;
+  width: 450px;
+  background: rgba(255,255,255,0.98);
+  backdrop-filter: blur(20px);
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  cursor: move;
+  box-sizing: border-box;
+  z-index: 1000;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.2);
+  overflow: hidden;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.dragging {
+  opacity: 0.8;
+  transform: rotate(2deg);
+}
+
+.header {
+  width: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1.5rem;
+  color: white;
+}
+
+.header h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header h3 span {
+  font-size: 0.8rem;
+  background: rgba(255,255,255,0.2);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.market-options {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.market-options label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.market-options label:hover {
+  opacity: 0.8;
+}
+
+.market-options input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: white;
+}
+
+.tab {
+  background: #f8f9fa;
+  padding: 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.tab button {
+  border: none;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  color: #667eea;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.tab button:hover,
+.tab button.active {
+  background: white;
+  border-bottom-color: #667eea;
+}
+
+.regular-order {
+  padding: 1.5rem;
+  background: white;
+}
+
+.order-validity {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.order-validity label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.order-validity input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #667eea;
+}
+
+.order-validity label span {
+  color: #6c757d;
+  font-size: 0.8rem;
+}
+
+.inputs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.inputs fieldset {
+  flex: 1;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 0;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.inputs fieldset:focus-within {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.inputs fieldset legend {
+  margin-left: 12px;
+  padding: 0 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6c757d;
+}
+
+.inputs fieldset input {
+  border: none;
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #495057;
+  background: transparent;
+}
+
+.inputs fieldset input:focus {
+  outline: none;
+}
+
+.inputs fieldset input:disabled {
+  background: #f8f9fa;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+.inputs fieldset input::placeholder {
+  color: #adb5bd;
+  font-weight: 400;
+}
+
+.message {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.message.success {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.message.error {
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+}
+
+.buttons span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #495057;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.buttons span::before {
+  content: '💰';
+}
+
+.buttons div {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.btn-blue {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btn-grey {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-grey:hover:not(:disabled) {
+  background: #5a6268;
+}
+  

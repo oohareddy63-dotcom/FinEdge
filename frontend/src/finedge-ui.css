@@ -1,0 +1,271 @@
+/* Finedge UI (Landing app)
+   - Original, modern fintech look
+   - Soft palette + cards + typography hierarchy
+*/
+
+:root {
+  --fe-bg: linear-gradient(135deg, #0A0A1A 0%, #1A0A2A 50%, #2D1B69 100%);
+  --fe-surface: rgba(10, 10, 26, 0.85);
+  --fe-surface-solid: #1A0A2A;
+  --fe-text: #FFFFFF;
+  --fe-muted: #14978B;
+  --fe-border: rgba(20, 151, 139, 0.3);
+
+  --fe-primary: #14978B;
+  --fe-primary-700: #0F7A70;
+  --fe-accent: #9D4EDD;
+
+  --fe-shadow-sm: 0 1px 2px rgba(20, 151, 139, 0.06);
+  --fe-shadow-md: 0 12px 30px rgba(20, 151, 139, 0.10);
+  --fe-shadow-lg: 0 22px 60px rgba(157, 78, 221, 0.14);
+
+  --fe-radius-sm: 12px;
+  --fe-radius-md: 16px;
+  --fe-radius-lg: 22px;
+}
+
+html, body {
+  background: radial-gradient(1200px 800px at 20% 10%, rgba(20, 151, 139, 0.12) 0%, transparent 55%),
+              radial-gradient(900px 700px at 80% 15%, rgba(157, 78, 221, 0.10) 0%, transparent 60%),
+              var(--fe-bg);
+  min-height: 100vh;
+  color: var(--fe-text);
+}
+
+/* Don’t force transition on every element (causes jank).
+   Keep transitions opt-in via utility classes. */
+* { transition: none; }
+.fe-animate { transition: all 220ms cubic-bezier(0.4, 0, 0.2, 1); }
+
+.fe-container-narrow {
+  max-width: 1100px;
+}
+
+.fe-section {
+  padding: 72px 0;
+}
+
+.fe-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border: 1px solid var(--fe-border);
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 999px;
+  color: var(--fe-muted);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.fe-h1 {
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 14px 0 12px;
+}
+
+.fe-lead {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(0, 255, 229, 0.9);
+  margin: 0 0 22px;
+}
+
+.fe-card {
+  border: 1px solid var(--fe-border);
+  background: var(--fe-surface);
+  backdrop-filter: blur(12px);
+  border-radius: var(--fe-radius-lg);
+  box-shadow: var(--fe-shadow-md);
+}
+
+.fe-card-solid {
+  background: var(--fe-surface-solid);
+  backdrop-filter: none;
+}
+
+.fe-hero {
+  padding: 90px 0 64px;
+}
+
+.fe-hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .fe-hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fe-hero-visual {
+  position: relative;
+  padding: 18px;
+}
+
+.fe-hero-visual::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(13, 148, 136, 0.18) 0%, rgba(124, 58, 237, 0.12) 55%, rgba(255, 255, 255, 0.0) 100%);
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.fe-btn {
+  border-radius: 14px !important;
+  padding: 12px 18px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em;
+}
+
+.fe-btn-primary {
+  background: linear-gradient(135deg, var(--fe-primary) 0%, var(--fe-primary-700) 100%) !important;
+  border: 0 !important;
+  color: #fff !important;
+  box-shadow: 0 12px 30px rgba(13, 148, 136, 0.22);
+}
+
+.fe-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 40px rgba(13, 148, 136, 0.28);
+}
+
+.fe-btn-secondary {
+  background: rgba(255, 255, 255, 0.7) !important;
+  border: 1px solid var(--fe-border) !important;
+  color: var(--fe-text) !important;
+}
+
+.fe-btn-secondary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--fe-shadow-sm);
+}
+
+.fe-metric-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: rgba(15, 23, 42, 0.70);
+  font-weight: 600;
+}
+
+.fe-metric-pill {
+  border: 1px solid var(--fe-border);
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 999px;
+  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Navbar / footer polish */
+.fe-navbar {
+  border-bottom: 1px solid var(--fe-border);
+  background: rgba(255, 255, 255, 0.78) !important;
+  backdrop-filter: blur(14px);
+}
+
+.fe-footer {
+  margin-top: 72px;
+  border-top: 1px solid var(--fe-border);
+  background: linear-gradient(180deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.88) 100%);
+}
+
+.fe-footer a {
+  color: rgba(15, 23, 42, 0.72);
+  text-decoration: none;
+}
+
+.fe-footer a:hover {
+  color: var(--fe-primary);
+  text-decoration: none;
+}
+
+/* Support page */
+.fe-support-hero {
+  padding: 44px 0 22px;
+}
+
+.fe-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid var(--fe-border);
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.fe-search input {
+  border: 0;
+  outline: none;
+  background: transparent;
+  width: 100%;
+}
+
+.fe-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--fe-border);
+  background: rgba(255, 255, 255, 0.65);
+  color: rgba(15, 23, 42, 0.72);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.fe-chip:hover {
+  color: var(--fe-primary);
+  border-color: rgba(13, 148, 136, 0.25);
+}
+
+/* Ticket topic cards */
+.fe-topic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 992px) {
+  .fe-topic-grid { grid-template-columns: 1fr; }
+}
+
+.fe-topic-card {
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid var(--fe-border);
+  background: rgba(255,255,255,0.86);
+  box-shadow: var(--fe-shadow-sm);
+}
+
+.fe-topic-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  margin: 0 0 10px;
+}
+
+.fe-topic-links a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 12px;
+  color: rgba(15, 23, 42, 0.72);
+  text-decoration: none;
+}
+
+.fe-topic-links a:hover {
+  background: rgba(13, 148, 136, 0.08);
+  color: var(--fe-text);
+}
+

@@ -1,0 +1,60 @@
+.product-section {
+  padding: 80px 0;
+}
+
+.product-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 0 20px;
+}
+
+.product-container.reverse {
+  flex-direction: row-reverse;
+}
+
+.product-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  width: 450px; /* Make all images the same size */
+  height: 300px; /* Fixed height for consistency */
+  object-fit: cover; /* Ensure images maintain aspect ratio */
+}
+
+.product-content {
+  flex: 1;
+}
+
+.product-content h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+.product-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #9ca3af;
+}
+
+@media (max-width: 768px) {
+  .product-container,
+  .product-container.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .product-image.normal,
+  .product-image.small,
+  .product-image.large {
+    width: 280px;
+  }
+}

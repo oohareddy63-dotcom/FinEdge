@@ -1,0 +1,219 @@
+/* Finedge UI (Dashboard app)
+   Constraints: component-level only, no data-flow changes.
+*/
+
+:root {
+  --fd-bg: #0b1220;
+  --fd-surface: rgba(255, 255, 255, 0.06);
+  --fd-surface-2: rgba(255, 255, 255, 0.09);
+  --fd-border: rgba(255, 255, 255, 0.12);
+  --fd-text: rgba(255, 255, 255, 0.92);
+  --fd-muted: rgba(255, 255, 255, 0.62);
+  --fd-soft: rgba(255, 255, 255, 0.04);
+
+  --fd-primary: #22c55e; /* green-500 */
+  --fd-primary-2: #0ea5e9; /* sky-500 */
+  --fd-warn: #f59e0b;
+  --fd-danger: #fb7185;
+
+  --fd-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+  --fd-radius: 18px;
+}
+
+body {
+  background:
+    radial-gradient(900px 700px at 12% 8%, rgba(14, 165, 233, 0.22) 0%, transparent 55%),
+    radial-gradient(900px 700px at 88% 10%, rgba(34, 197, 94, 0.20) 0%, transparent 60%),
+    radial-gradient(1200px 900px at 50% 110%, rgba(124, 58, 237, 0.18) 0%, transparent 55%),
+    var(--fd-bg);
+  color: var(--fd-text);
+}
+
+/* Layout */
+.dashboard-container {
+  background: transparent !important;
+  gap: 16px;
+  padding: 14px;
+}
+
+.watchlist-container {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--fd-border);
+  border-radius: var(--fd-radius);
+  box-shadow: var(--fd-shadow);
+  overflow: hidden;
+}
+
+.content {
+  background: rgba(255, 255, 255, 0.07) !important;
+  border: 1px solid var(--fd-border);
+  border-radius: var(--fd-radius);
+  box-shadow: var(--fd-shadow);
+  margin: 0 !important;
+}
+
+/* Top bar / indices */
+.topbar-container {
+  border-bottom: 1px solid var(--fd-border) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  backdrop-filter: blur(14px);
+}
+
+.indices-container {
+  border-right: 1px solid var(--fd-border) !important;
+}
+
+.nifty, .sensex {
+  border-radius: 16px !important;
+}
+
+/* Search */
+.search-container {
+  padding: 14px 14px 10px;
+  border-bottom: 1px solid var(--fd-border);
+  background: rgba(255,255,255,0.04);
+}
+
+.search {
+  border-radius: 14px;
+  padding: 12px 14px !important;
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid var(--fd-border) !important;
+  color: var(--fd-text) !important;
+}
+
+.search::placeholder {
+  color: rgba(255,255,255,0.45);
+}
+
+.counts {
+  color: rgba(255,255,255,0.55) !important;
+}
+
+/* Watchlist cards */
+.list {
+  padding: 10px 10px 16px !important;
+}
+
+.list li {
+  border: 0 !important;
+  padding: 0 !important;
+  margin-bottom: 10px;
+}
+
+.item {
+  border: 1px solid var(--fd-border);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+  padding: 12px 12px;
+}
+
+.item:hover {
+  background: rgba(255,255,255,0.09);
+}
+
+.item p {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.itemInfo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price {
+  font-weight: 800;
+}
+
+.down { color: var(--fd-danger) !important; }
+.up { color: var(--fd-primary) !important; }
+
+.actions {
+  padding-right: 10px;
+}
+
+.buy, .sell, .action {
+  border-radius: 10px !important;
+}
+
+/* Widgets / tables */
+.title {
+  font-weight: 900 !important;
+  letter-spacing: -0.02em;
+  color: var(--fd-text) !important;
+}
+
+.order-table {
+  border: 1px solid var(--fd-border);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.04);
+}
+
+.order-table th {
+  color: rgba(255,255,255,0.65) !important;
+}
+
+.order-table td, .order-table th {
+  border-color: rgba(255,255,255,0.08) !important;
+}
+
+.instrument-name {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.loading, .empty-state, .no-orders {
+  border: 1px dashed rgba(255,255,255,0.18);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.04);
+  padding: 18px;
+  color: rgba(255,255,255,0.75);
+}
+
+/* Summary widget card look */
+.section {
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+  border-radius: 16px;
+  padding: 14px 14px 10px;
+  margin-bottom: 14px;
+}
+
+.divider {
+  background: rgba(255,255,255,0.10) !important;
+}
+
+/* Menu */
+.menu-container {
+  background: transparent !important;
+}
+
+.menu {
+  color: rgba(255,255,255,0.70) !important;
+}
+
+.menu.selected {
+  color: var(--fd-primary-2) !important;
+  font-weight: 800;
+}
+
+.profile .avatar {
+  background: rgba(14,165,233,0.18) !important;
+  color: rgba(255,255,255,0.90) !important;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.fe-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.04);
+}
+

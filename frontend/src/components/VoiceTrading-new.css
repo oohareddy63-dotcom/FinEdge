@@ -1,0 +1,492 @@
+/* Modern Voice Trading Component Styles */
+
+.voice-trading-modern {
+  width: 100%;
+}
+
+/* Status Messages */
+.status-message {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border-radius: var(--border-radius-lg);
+  margin-bottom: 24px;
+  animation: slideIn 0.3s ease-out;
+}
+
+.status-message.listening {
+  background: linear-gradient(135deg, var(--primary-50), white);
+  border: 1px solid var(--primary-200);
+}
+
+.status-message.processing {
+  background: linear-gradient(135deg, var(--warning-50), white);
+  border: 1px solid var(--warning-200);
+}
+
+.status-message.error {
+  background: linear-gradient(135deg, var(--danger-50), white);
+  border: 1px solid var(--danger-200);
+}
+
+.status-message.success {
+  background: linear-gradient(135deg, var(--success-50), white);
+  border: 1px solid var(--success-200);
+}
+
+.status-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--border-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.status-message.listening .status-icon {
+  background: var(--primary-100);
+  color: var(--primary-600);
+}
+
+.status-message.processing .status-icon {
+  background: var(--warning-100);
+  color: var(--warning-600);
+}
+
+.status-message.error .status-icon {
+  background: var(--danger-100);
+  color: var(--danger-600);
+}
+
+.status-message.success .status-icon {
+  background: var(--success-100);
+  color: var(--success-600);
+}
+
+/* Listening Dots Animation */
+.listening-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.listening-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: listeningPulse 1.4s infinite ease-in-out;
+}
+
+.listening-dots span:nth-child(1) { animation-delay: 0s; }
+.listening-dots span:nth-child(2) { animation-delay: 0.2s; }
+.listening-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes listeningPulse {
+  0%, 60%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Processing Spinner */
+.processing-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Status Content */
+.status-content h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0 0 4px 0;
+}
+
+.status-content p {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Main Voice Interface */
+.voice-interface {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Microphone Button */
+.microphone-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.mic-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-xl);
+  padding: 16px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.mic-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+.mic-button.listening {
+  background: linear-gradient(135deg, var(--danger-500), var(--danger-600));
+  animation: micPulse 2s infinite;
+}
+
+.mic-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.mic-icon {
+  font-size: 1.25rem;
+  transition: transform var(--transition-base);
+}
+
+.mic-button:hover .mic-icon {
+  transform: scale(1.1);
+}
+
+.mic-text {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Mic Pulse Animation */
+@keyframes micPulse {
+  0%, 100% {
+    box-shadow: var(--shadow-lg);
+  }
+  50% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4), var(--shadow-lg);
+  }
+}
+
+/* Transcript Display */
+.transcript-display {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius-md);
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.transcript-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.transcript-text {
+  font-size: 1rem;
+  color: var(--gray-900);
+  line-height: 1.6;
+  padding: 12px;
+  background: var(--gray-50);
+  border-radius: var(--border-radius-sm);
+  border-left: 3px solid var(--primary-400);
+  font-style: italic;
+}
+
+/* Confirmation Modal */
+.confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.confirmation-modal {
+  background: white;
+  border-radius: var(--border-radius-lg);
+  padding: 32px;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: var(--shadow-xl);
+  animation: slideUp 0.3s ease-out;
+}
+
+.confirmation-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.confirmation-header h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0 0 8px 0;
+}
+
+.confirmation-header p {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Trade Details Grid */
+.trade-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+  background: var(--gray-50);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--gray-200);
+}
+
+.detail-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.detail-value {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.detail-value.buy {
+  color: var(--success-600);
+}
+
+.detail-value.sell {
+  color: var(--danger-600);
+}
+
+/* Confirmation Actions */
+.confirmation-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-confirm,
+.btn-cancel {
+  flex: 1;
+  padding: 14px 24px;
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-confirm {
+  background: linear-gradient(135deg, var(--success-500), var(--success-600));
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-confirm:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-cancel {
+  background: white;
+  color: var(--gray-600);
+  border: 1px solid var(--gray-300);
+}
+
+.btn-cancel:hover {
+  background: var(--gray-50);
+  border-color: var(--gray-400);
+  color: var(--gray-700);
+}
+
+/* Voice Examples */
+.voice-examples {
+  background: linear-gradient(135deg, var(--primary-50), white);
+  border: 1px solid var(--primary-200);
+  border-radius: var(--border-radius-md);
+  padding: 24px;
+}
+
+.voice-examples h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0 0 16px 0;
+}
+
+.examples-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.example-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: white;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--gray-200);
+  font-size: 0.875rem;
+  color: var(--gray-700);
+  transition: all var(--transition-base);
+}
+
+.example-item:hover {
+  border-color: var(--primary-300);
+  background: var(--primary-50);
+  transform: translateX(4px);
+}
+
+.example-icon {
+  color: var(--primary-500);
+  font-size: 0.875rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .status-message {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 16px;
+  }
+  
+  .mic-button {
+    padding: 14px 24px;
+    font-size: 0.875rem;
+  }
+  
+  .confirmation-modal {
+    padding: 24px;
+    margin: 20px;
+  }
+  
+  .trade-details-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .confirmation-actions {
+    flex-direction: column;
+  }
+  
+  .voice-examples {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mic-button {
+    padding: 12px 20px;
+    font-size: 0.8125rem;
+  }
+  
+  .mic-text {
+    font-size: 0.8125rem;
+  }
+  
+  .confirmation-modal {
+    padding: 20px;
+  }
+  
+  .detail-item {
+    padding: 12px;
+  }
+  
+  .btn-confirm,
+  .btn-cancel {
+    padding: 12px 20px;
+    font-size: 0.875rem;
+  }
+}

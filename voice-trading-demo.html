@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Trading Demo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .demo-container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .demo-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .command-example {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .feature-list li:before {
+            content: "✓";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .try-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+        .try-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1 style="text-align: center; color: #333; margin-bottom: 30px;">
+            🎤 Voice Trading Feature Demo
+        </h1>
+        
+        <div class="demo-section">
+            <h2>🚀 How to Use Voice Trading</h2>
+            <ol>
+                <li>Navigate to the <strong>Dashboard</strong> page</li>
+                <li>Click the <strong>"Start Recording"</strong> microphone button</li>
+                <li>Speak your trade command clearly</li>
+                <li>Review the extracted trade details</li>
+                <li>Confirm or cancel the trade</li>
+            </ol>
+        </div>
+
+        <div class="demo-section">
+            <h2>🗣️ Example Voice Commands</h2>
+            <div class="command-example">
+                "Buy 10 shares of Infosys at market price"
+            </div>
+            <div class="command-example">
+                "Sell 5 shares of Reliance at limit price"
+            </div>
+            <div class="command-example">
+                "Purchase 20 stocks of TCS"
+            </div>
+            <div class="command-example">
+                "Exit 15 shares of HDFC Bank"
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>✨ Features Implemented</h2>
+            <ul class="feature-list">
+                <li>Speech Recognition using Web Speech API</li>
+                <li>Natural Language Processing for trade commands</li>
+                <li>Support for Buy/Sell actions</li>
+                <li>Automatic stock symbol recognition</li>
+                <li>Quantity extraction from voice</li>
+                <li>Market/Limit price type detection</li>
+                <li>Trade confirmation modal</li>
+                <li>Voice feedback using Text-to-Speech</li>
+                <li>Error handling and user guidance</li>
+                <li>Integration with backend order API</li>
+            </ul>
+        </div>
+
+        <div class="demo-section">
+            <h2>📊 Supported Stocks</h2>
+            <p>The system recognizes major Indian stocks including:</p>
+            <ul class="feature-list">
+                <li>INFY (Infosys)</li>
+                <li>RELIANCE (Reliance Industries)</li>
+                <li>TCS (Tata Consultancy Services)</li>
+                <li>HDFCBANK (HDFC Bank)</li>
+                <li>SBIN (State Bank of India)</li>
+                <li>ITC (ITC Limited)</li>
+                <li>HINDUNILVR (Hindustan Unilever)</li>
+                <li>WIPRO (Wipro Limited)</li>
+                <li>BHARTIARTL (Bharti Airtel)</li>
+                <li>KOTAKBANK (Kotak Mahindra Bank)</li>
+            </ul>
+        </div>
+
+        <div class="demo-section">
+            <h2>🔧 Technical Implementation</h2>
+            <p><strong>Frontend:</strong> React.js with Web Speech API</p>
+            <p><strong>Backend:</strong> Node.js with Express and MongoDB</p>
+            <p><strong>Speech Processing:</strong> Browser's native SpeechRecognition API</p>
+            <p><strong>Voice Feedback:</strong> Speech Synthesis API</p>
+            <p><strong>Order Processing:</strong> RESTful API integration</p>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="http://localhost:3000/dashboard" class="try-button">
+                🎯 Try Voice Trading Now
+            </a>
+        </div>
+
+        <div class="demo-section">
+            <h2>⚠️ Browser Compatibility</h2>
+            <p><strong>Recommended Browsers:</strong></p>
+            <ul class="feature-list">
+                <li>Google Chrome (Best support)</li>
+                <li>Microsoft Edge</li>
+                <li>Safari (Limited support)</li>
+            </ul>
+            <p><strong>Note:</strong> Firefox has limited speech recognition support. Use Chrome or Edge for best experience.</p>
+        </div>
+    </div>
+
+    <script>
+        // Simple demo script to show voice trading capabilities
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Voice Trading Demo Loaded');
+            console.log('Navigate to http://localhost:3000/dashboard to try the feature');
+        });
+    </script>
+</body>
+</html>
