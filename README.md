@@ -399,10 +399,4 @@ curl http://localhost:3002/addPositions
 - `GET /allOrders` - Order history
 - `POST /newOrder` - Place order (body: name, qty, price, mode, product, orderType)
 
-## License
-
-MIT. For educational use.
-
----
-
 **Finedge** – full-stack trading platform project.
