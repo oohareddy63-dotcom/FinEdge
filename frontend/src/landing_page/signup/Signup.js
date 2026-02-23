@@ -13,6 +13,9 @@ function Signup() {
       return;
     }
 
+
+    
+
     setIsSubmitting(true);
     setMessage("");
 
