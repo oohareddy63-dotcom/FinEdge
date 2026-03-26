@@ -1,5 +1,4 @@
 const { Schema } = require("mongoose");
-
 const PositionsSchema = new Schema({
   userId: { type: String, default: "demo_user" },
   product: { type: String, default: "CNC" },
