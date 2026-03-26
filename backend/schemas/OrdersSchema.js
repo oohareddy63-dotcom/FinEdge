@@ -1,5 +1,4 @@
 const { Schema } = require("mongoose");
-
 const OrdersSchema = new Schema({
   symbol: { type: String, required: true },
   name: { type: String, required: true },
