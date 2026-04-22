@@ -17,6 +17,7 @@ function Education() {
           <div className="fe-eyebrow">
             <i className="fa-solid fa-graduation-cap" aria-hidden="true"></i>
             Learn at your pace
+              
           </div>
           <h2 className="mt-3" style={{ letterSpacing: "-0.02em", fontWeight: 800 }}>
             Education that feels practical
