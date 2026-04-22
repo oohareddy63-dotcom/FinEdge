@@ -12,6 +12,7 @@ function Pricing() {
             We pioneered the concept of discount broking and price transparency
             in India. Flat fees and no hidden charges.
           </p>
+              
           <a 
             href="/pricing" 
             className="btn btn-primary btn-lg d-inline-flex align-items-center gap-2"
