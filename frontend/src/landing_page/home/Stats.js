@@ -10,6 +10,7 @@ function Stats() {
             <i className="fa-solid fa-handshake" aria-hidden="true"></i>
             Built for everyday investing
           </div>
+              
           <h2 className="mt-3" style={{ letterSpacing: "-0.02em", fontWeight: 800 }}>
             Trust, without the noise
           </h2>
