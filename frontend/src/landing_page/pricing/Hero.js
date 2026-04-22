@@ -8,6 +8,7 @@ function Hero() {
           Free equity investments and flat ₹20 traday and F&O trades
         </h3>
       </div>
+    
       <div className="row p-5 mt-5 text-center">
         <div className="col-4 p-4">
           <img src="media/images/pricingEquity.svg" alt="Free equity delivery icon" />
