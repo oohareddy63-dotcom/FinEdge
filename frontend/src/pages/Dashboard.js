@@ -1,7 +1,6 @@
 import React from 'react';
 import VoiceTrading from '../components/VoiceTrading';
 import './Dashboard.css';
-
 // Main Dashboard Component with Voice Trading Integration
 const Dashboard = () => {
   return (
