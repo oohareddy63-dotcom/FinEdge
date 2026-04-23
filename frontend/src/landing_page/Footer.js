@@ -13,23 +13,28 @@ function Footer() {
                 alt="Finedge"
                 style={{ width: "42px", height: "42px" }}
               />
+                
               <div>
                 <div style={{ fontWeight: 900, letterSpacing: "0.02em" }}>Finedge</div>
                 <div style={{ color: "rgba(15, 23, 42, 0.60)", fontSize: "0.95rem" }}>
                   Trading platform UI + dashboard
                 </div>
-              </div>
+              
+                    </div>
             </div>
             <p className="mt-3 mb-0" style={{ color: "rgba(15, 23, 42, 0.65)" }}>
               &copy; 2015 - 2025 Finedge Broking Ltd. All rights reserved.
             </p>
+                    
           </div>
 
           <div className="col-6 col-lg-2">
             <div style={{ fontWeight: 800, marginBottom: 10 }}>Company</div>
             <div className="d-grid gap-2">
               <a href="">About</a>
+                    
               <a href="">Products</a>
+                    
               <a href="">Pricing</a>
               <a href="">Careers</a>
               <a href="">Finedge.tech</a>
