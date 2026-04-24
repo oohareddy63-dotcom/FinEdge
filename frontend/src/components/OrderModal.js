@@ -9,6 +9,7 @@ const OrderModal = ({ isOpen, onClose, initialOrderType = 'BUY' }) => {
   const [validity, setValidity] = useState('DAY');
   const [variety, setVariety] = useState('NORMAL');
 
+  
   // Sample stock data for autocomplete
   const [stocks, setStocks] = useState([
     { symbol: 'RELIANCE', name: 'Reliance Industries Ltd', price: 2456.30, change: 2.5 },
@@ -50,6 +51,7 @@ const OrderModal = ({ isOpen, onClose, initialOrderType = 'BUY' }) => {
     }
   }, [symbol]);
 
+  
   // Calculate order value and charges
   const orderValue = quantity && price ? parseFloat(quantity) * parseFloat(price) : 0;
   const brokerage = orderValue * 0.0003; // 0.03% brokerage
@@ -58,6 +60,7 @@ const OrderModal = ({ isOpen, onClose, initialOrderType = 'BUY' }) => {
   const gst = (brokerage + transactionCharges) * 0.18; // 18% GST
   const totalCharges = brokerage + stt + transactionCharges + gst;
 
+  
   // Handle stock selection
   const handleStockSelect = (stock) => {
     setSymbol(stock.symbol);
@@ -80,6 +83,7 @@ const OrderModal = ({ isOpen, onClose, initialOrderType = 'BUY' }) => {
         headers: {
           'Content-Type': 'application/json',
         },
+        
         body: JSON.stringify({
           symbol,
           quantity: parseInt(quantity),
